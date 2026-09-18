@@ -1,0 +1,13 @@
+# Third-party packages the pipeline imports. Also needed outside pip:
+#   espeak-ng (phonemizer backend), Anki + the AnkiConnect add-on (127.0.0.1:8765).
+anthropic
+google-genai
+requests
+numpy
+Pillow
+pyautogui
+pyperclip
+sounddevice
+lameenc
+kokoro-onnx
+phonemizer

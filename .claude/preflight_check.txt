@@ -1,0 +1,14 @@
+[PRE-RESPONSE PROTOCOL CHECK -- run this BEFORE composing your answer, every turn]
+The point is to catch the rules you are BLIND to, not only the ones you happen to remember.
+
+1. Actively CONSULT the FULL CLAUDE.md and the FULL memory/feedback_workflow.md this turn -- the whole documents, not a summary, not "what you recall."
+2. If either is not currently in your context (e.g. after a compaction), READ it from disk first. Do not coast on a stale session-start copy.
+3. Weigh your INTENDED action against ALL of it: every Blind Spot, every Constitution rule, the Pre-Edit Discipline, the Operating Loop / routing rules, and every dated lesson in feedback_workflow.md.
+   Repeat-offenders to be extra alert to (EXAMPLES ONLY -- not the whole list):
+   - Reinventing vs COPYING a proven artifact (start from the baseline, change one variable).
+   - Asserting a file's state you have not read or grepped THIS session.
+   - Designing a fix for a bug you have not confirmed is real.
+   - Hand-authoring PROMPT DESIGN that CLAUDE.md routes to Chat.
+   - Acting on my own PARAPHRASE of the user's wishes instead of their actual words. If I summarized their asks (scout brief, plan, reconciliation), have I diffed the summary against their verbatim text this phase -- not just felt sure I "got everything"? A self-check is not a diff.
+4. Then answer. If a rule applies, follow it -- or state plainly why you are not. Never proceed blind.
+5. BEFORE SENDING: does the reply end with the plain-English TLDR (global CLAUDE.md rule 14)? Required whenever files changed, a decision is needed, or the reply ran long. "Your move" and "Still open" print even when empty. A trivial one-line answer is exempt -- one line IS its TLDR.

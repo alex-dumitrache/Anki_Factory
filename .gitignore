@@ -1,0 +1,87 @@
+# 1. Ignore EVERYTHING in this folder
+*
+
+# 2. Allow the core engine files (The "Whitelist")
+!CHANGELOG.md
+!CLAUDE.md
+!check.sh
+!config.py
+!run_master.py
+!run_phase*.py
+!.gitattributes
+!tts_reader.py
+!image_media.py
+!pairings.py
+
+# 2b. Allow the NotebookLM MASTER template (source). FILLED is generated per
+# run and stays ignored; pairings_generated.json is a regenerable cache.
+!NotebookLM_Prompt_BETA.txt
+
+# 2c. Allow Scout handoff briefs. These are the durable record of a forensics
+# phase — the investigation that produced a graft. CHANGELOG.md records the
+# surgery; nothing else records the reasoning that justified it, and these
+# briefs are written once and read months later by a session with no context.
+!SCOUT_*.md
+
+# 2d. Allow skill/architecture specs. Same reasoning as 2c: these are design
+# documents read months later by a session with no context, and they are the
+# only record of WHY a skill works the way it does.
+!SKILL_SPEC_*.md
+!MEDIC_TICKETS.md
+
+# 2e. Allow the /medic annotation archive. Step 8 archives Medic_Notes verbatim
+# HERE and only then clears the field, so this file is the sole surviving copy of
+# the Chief Architect's review annotations — the QA evidence trail. Untracked, it
+# was one `rm` from unrecoverable.
+
+# 2f. Allow the feedback ledger — every sentence of the Chief Architect's in-card
+# annotations with a per-sentence disposition. This is the completeness check that
+# nine text-verification passes could not perform, because its unit is their words
+# rather than my reading of them.
+
+# 2g. Allow the /shorts notebook registry — maps topic -> Google account -> NotebookLM
+# notebook UUID, keyed on EMAIL because the authuser index silently renumbers when an
+# account is added. Untracked, a clean checkout loses the only map of where every
+# video lives, and /shorts cannot tell which account it is standing in.
+
+# 2h. Allow the sweep record — a human-readable log of what past /sweep passes found
+# and whether each came back DIRTY or CLEAN. It is NOT the boundary source: /sweep
+# reads the session transcript directly and does not read this file. Tracked because
+# it is the only place the open-items trail across passes is written down.
+!SWEEP_LOG.md
+
+# 2i. Allow the /shorts rollback file. shorts.md §8 writes each note's previous Extra
+# HERE *before* overwriting it, because AnkiConnect has NO undo — this is the sole
+# record of what a card looked like before a video link was prepended. Untracked, the
+# safety net that every write is taken on the strength of does not survive the folder.
+
+# 3. Allow the Prompts folder and everything inside it
+!Prompts/
+!Prompts/*
+
+# 4. Allow workflow skill files — .claude/commands/ holds all 9 phase skills
+# (scout / design / redteam / surgeon / commit / compass / telemetry / medic / shorts) which ARE workflow source.
+# (.claude/ itself must be un-ignored first so git can descend into it; other .claude/ contents stay ignored.)
+!.claude/
+!.claude/commands/
+!.claude/commands/*
+
+# 4b. Allow the preflight hook payload. .claude/settings.local.json fires this on
+# every UserPromptSubmit; it is user-authored workflow source, not Claude Code
+# internal data, and it is the enforcement mechanism for everything else — losing
+# it silently disables the per-turn protocol check with no visible symptom.
+!.claude/preflight_check.txt
+
+# 5. Don't ignore this file itself
+!.gitignore
+
+# 6. PUBLIC SNAPSHOT ONLY — the files that make this repository readable and
+# runnable by someone who is not me. Rule 1 above ignores everything not named
+# here, so without these lines the published repo would have no README, no
+# dependency list, and none of the placeholder inputs.
+# run_backup.py is engine code: run_master.py imports it.
+!README.md
+!requirements.txt
+!run_backup.py
+!api_keys.example.py
+!raw_chat.example.txt

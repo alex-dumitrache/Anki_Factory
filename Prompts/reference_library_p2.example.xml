@@ -1,0 +1,43 @@
+PLACEHOLDER - this file shows the SHAPE only. Supply your own content and save it
+as `reference_library_p2.xml` in this folder. (The extension says .xml for
+historical reasons; the file is plain text and is injected verbatim into the
+prompt between <reference_library> tags.)
+
+Stage 2 calls sys.exit(1) if the real file is absent, so the pipeline
+stops with a clear message rather than running without it.
+
+Mine is about 1,480 lines. It is NOT published here: REF A is the course's own
+lecture list and REF B is the certification objectives, both third-party material.
+
+================================================================================
+
+**[REF A: COURSE SYLLABUS MAP]**
+[1. First lecture title (3min)
+2. Second lecture title (7min)
+3. Third lecture title (15min)
+... one line per lecture, in course order, to the end ...
+189. Final lecture title (11min)]
+
+**[REF B: MASTER KNOWLEDGE GRAPH]**
+
+## Domain 1.0 Name of the first exam domain
+
+### 1.1 The first objective, worded as the certification body words it
+- Concept name: the one-line statement a card can be checked against.
+- Another concept: what a candidate is expected to be able to do with it.
+- A third: note where the exam answer and production practice differ.
+
+### 1.2 The second objective
+- Concept name: ...
+
+## Domain 2.0 Name of the second exam domain
+
+### 2.1 ...
+
+================================================================================
+
+WHAT EACH HALF IS FOR
+
+  REF A lets stage 1 place a lecture in the course and see what came before it.
+  REF B lets stage 1 and the stage 6 unit auditor check the finished cards
+  against the exam objectives, and catch what no single lecture covered.
